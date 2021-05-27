@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     // Public variables
     public Camera mainCamera;
     public Camera firstPersonCamera;
-    public KeyCode switchKey; 
+    public KeyCode switchKey;
+    public string inputID;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +26,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Initialized input variables to get horizontal and vertical input 
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal" + inputID);
+        forwardInput = Input.GetAxis("Vertical" + inputID);
         
 
         // Move the vehicle forward based on vertical input 
